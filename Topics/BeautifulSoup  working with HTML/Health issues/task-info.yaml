@@ -1,0 +1,79 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: |-
+    import requests
+
+    from bs4 import BeautifulSoup
+
+    letter = 'S'
+    url = input()
+  learner_created: false
+- name: test
+  visible: true
+  learner_created: true
+- name: test2.py
+  visible: true
+  learner_created: true
+feedback_link: https://hyperskill.org/learn/step/13066#comment
+status: Failed
+feedback:
+  message: |
+    Failed. Runtime error
+
+    Error:
+    Traceback (most recent call last):
+      File "/home/stepic/instances/master-plugins/sandbox/python3/lib/python3.6/site-packages/urllib3/connection.py", line 171, in _new_conn
+        (self._dns_host, self.port), self.timeout, **extra_kw)
+      File "/home/stepic/instances/master-plugins/sandbox/python3/lib/python3.6/site-packages/urllib3/util/connection.py", line 79, in create_connection
+        raise err
+      File "/home/stepic/instances/master-plugins/sandbox/python3/lib/python3.6/site-packages/urllib3/util/connection.py", line 69, in create_connection
+        sock.connect(sa)
+    TimeoutError: [Errno 110] Connection timed out
+
+    During handling of the above exception, another exception occurred:
+
+    Traceback (most recent call last):
+      File "/home/stepic/instances/master-plugins/sandbox/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+        chunked=chunked)
+      File "/home/stepic/instances/master-plugins/sandbox/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 343, in _make_request
+        self._validate_conn(conn)
+      File "/home/stepic/instances/master-plugins/sandbox/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 849, in _validate_conn
+        conn.connect()
+      File "/home/stepic/instances/master-plugins/sandbox/python3/lib/python3.6/site-packages/urllib3/connection.py", line 314, in connect
+        conn = self._new_conn()
+      File "/home/stepic/instances/master-plugins/sandbox/python3/lib/python3.6/site-packages/urllib3/connection.py", line 180, in _new_conn
+        self, "Failed to establish a new connection: %s" % e)
+    urllib3.exceptions.NewConnectionError: <urllib3.connection.VerifiedHTTPSConnection object at 0x7f591381eb70>: Failed to establish a new connection: [Errno 110] Connection timed out
+
+    During handling of the above exception, another exception occurred:
+
+    Traceback (most recent call last):
+      File "/home/stepic/instances/master-plugins/sandbox/python3/lib/python3.6/site-packages/requests/adapters.py", line 449, in send
+        timeout=timeout
+      File "/home/stepic/instances/master-plugins/sandbox/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+        _stacktrace=sys.exc_info()[2])
+      File "/home/stepic/instances/master-plugins/sandbox/python3/lib/python3.6/site-packages/urllib3/util/retry.py", line 398, in increment
+        raise MaxRetryError(_pool, url, error or ResponseError(cause))
+    urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='stepik.org', port=443): Max retries exceeded with url: /media/attachments/lesson/528166/Health_topics.html (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f591381eb70>: Failed to establish a new connection: [Errno 110] Connection timed out',))
+
+    During handling of the above exception, another exception occurred:
+
+    Traceback (most recent call last):
+      File "jailed_code", line 8, in <module>
+        response = requests.get(url)
+      File "/home/stepic/instances/master-plugins/sandbox/python3/lib/python3.6/site-packages/requests/api.py", line 76, in get
+        return request('get', url, params=params, **kwargs)
+      File "/home/stepic/instances/master-plugins/sandbox/python3/lib/python3.6/site-packages/requests/api.py", line 61, in request
+        return session.request(method=method, url=url, **kwargs)
+      File "/home/stepic/instances/master-plugins/sandbox/python3/lib/python3.6/site-packages/requests/sessions.py", line 530, in request
+        resp = self.send(prep, **send_kwargs)
+      File "/home/stepic/instances/master-plugins/sandbox/python3/lib/python3.6/site-packages/requests/sessions.py", line 643, in send
+        r = adapter.send(request, **kwargs)
+      File "/home/stepic/instances/master-plugins/sandbox/python3/lib/python3.6/site-packages/requests/adapters.py", line 516, in send
+        raise ConnectionError(e, request=request)
+    requests.exceptions.ConnectionError: HTTPSConnectionPool(host='stepik.org', port=443): Max retries exceeded with url: /media/attachments/lesson/528166/Health_topics.html (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7f591381eb70>: Failed to establish a new connection: [Errno 110] Connection timed out',))
+  time: "Thu, 08 Jun 2023 13:22:27 UTC"
+record: -1
+submission_language: python3

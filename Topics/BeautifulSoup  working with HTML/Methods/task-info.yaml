@@ -1,0 +1,26 @@
+type: matching
+captions:
+- <code>get()</code>
+- <code>find()</code>
+- <code>find_all()</code>
+- <code>prettify()</code>
+options:
+- returns a list of all the tags.
+- turns a tree into a string.
+- returns the first occurrence of a tag in a tree.
+- extracts tags' attributes.
+files:
+- name: main.py
+  visible: true
+  text: |+
+    #  You can experiment here, it won’t be checked
+
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/10211#comment
+status: Solved
+record: -1
+ordering:
+- 0
+- 1
+- 2
+- 3
